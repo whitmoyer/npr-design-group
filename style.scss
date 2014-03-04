@@ -1,0 +1,85 @@
+$link: #6d8ac4;
+$grey: #ebebeb;
+
+@mixin shadow($shadow: 0px 1px 1px rgba(0,0,0,0.15)) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+html {
+  font-size: 62.5%;  
+}
+body {
+  font-family: Gotham;
+  color: #777;
+  margin: 0; padding: 0;
+}
+#header {
+  background: $grey url(header-border.png) bottom no-repeat;
+  background-size: 100% 5px;
+  display: block;
+  @include shadow;
+  
+  .logo {
+    background: url(design-group-logo.svg) no-repeat;
+    background-size: 186px 28px;
+    display: inline-block;
+    height: 28px; width: 186px;
+    margin: 27px 0;
+    text-indent: -9999px;
+  }
+  #description {
+    color: #aaa;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .npr {
+    background: url(npr-logo.svg) no-repeat;
+    margin: 27px 0;
+    text-indent: -9999px;
+    float: right;
+    width: 65px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;  
+  a { color: #333;
+    &:hover { color: $link; }
+  }
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+p, li, blockquote {
+  font-size: 1.5rem;
+}
+
+a { 
+  color: $link;
+  text-decoration: none;
+  &:hover { color: lighten($link, 15%); }   
+}
+
+.photo {
+  img {
+    background: $grey;
+    min-width: 400px; min-height: 400px; //TEMPORARY CODE
+  }
+  .caption {
+    background: #fff;
+    display: block;
+    margin-top: -25px;
+    min-width: 300px;
+  }
+}
+
+// Touch includes small and medium breakpoints
+@media only screen and (max-width: 768px) {
+
+}
