@@ -27,31 +27,15 @@
     <!-- Loops for each post-type -->
     {block:Posts}
       <div class="post {TagsAsClasses}">
-        <div class="post-header">
-          {block:NewDayDate}
-          <h4 class="newdate">
-            <span class="day">{DayOfWeek}</span>
-            <span class="date">{Month} {DayOfMonthWithZero}, {Year}</span>
-            <span class="time">at {24Hour}:{Minutes}</span>
-          </h4>
-          {/block:NewDayDate}
-          {block:SameDayDate}
-          <h4 class="samedate">
-            <span class="day">{DayOfWeek}</span>
-            <span class="date">{Month} {DayOfMonthWithZero}, {Year}</span>
-            <span class="time">at {24Hour}:{Minutes}</span>
-          </h4>
-          {/block:SameDayDate}
-          
+        <div class="post-header">          
         {block:Text}
           <p class="post-metadata">
             <span class="post-type">Text</span>
-            <a href="{Permalink}" class="permalink">Permalink &#8734;</a>
           </p>
         </div> <!-- end post-header -->
       
         <div class="text">
-          <h3>{Title}</h3>
+          <h3><a href="{Permalink}" class="permalink">{Title}</a></h3>
           {Body}
         </div>
         {/block:Text}
@@ -83,40 +67,39 @@
         {/block:Link}
   
         {block:Video}
-          <p class="post-metadata">
-            <span class="post-type">Video</span>
-            <a href="{Permalink}" class="permalink">Permalink &#8734;</a>
-          </p>
         </div> <!-- end post-header -->
   
         <div class="video">
-          {Video-400}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          {Video-700}
+          <p class="post-metadata">
+            <span class="post-type">Video</span>
+          </p>          
+          {block:Caption}<div class="caption h3"><a href="{Permalink}" class="permalink">{Caption}</a></div>{/block:Caption}
         </div> 
         {/block:Video}
   
         {block:Audio}
-          <p class="post-metadata">
-            <span class="post-type">Audio</span>
-            <a href="{Permalink}" class="permalink">Permalink &#8734;</a>
-          </p>
         </div> <!-- end post-header -->
   
+        {block:AlbumArt}
+          <img src="{AlbumArtURL}" />
+        {/block:AlbumArt}
+
         <div class="audio">
           {AudioPlayerBlack}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          {block:Caption}<div class="caption h3"><a href="{Permalink}" class="permalink">{Caption}</a></div>{/block:Caption}
         </div>
         {/block:Audio}
   
         {block:Photo}
-          <p class="post-metadata">
+          <p class="post-metadata hide">
             <span class="post-type">Photo</span>
             <a href="{Permalink}" class="permalink">Permalink &#8734;</a>
           </p>
         </div> <!-- end post-header -->
   
         <div class="photo">
-          {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
+          {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Photo}
