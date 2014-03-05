@@ -1,5 +1,5 @@
 {block:tumblrThemr}
-  <link rel="stylesheet" href="themes/design/demo.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="themes/design/design.css" type="text/css" media="screen"/>
   <style type="text/css">{CustomCSS}</style>
 
   <div id="wrapper">
